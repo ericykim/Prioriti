@@ -1,0 +1,15 @@
+PODS:
+  - DLRadioButton (1.4.8)
+  - JTAppleCalendar (4.0.3)
+
+DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
+  - JTAppleCalendar
+
+SPEC CHECKSUMS:
+  DLRadioButton: 8fe4865b3ea8a5236e1d114dd283dd0884d3dc46
+  JTAppleCalendar: e92e2de6b4beea7dcd14eb2ba8ae3a6122fdf6d0
+
+PODFILE CHECKSUM: 864ddacb71ff39891418a56c92b4a11fe6ad0c93
+
+COCOAPODS: 1.0.1
