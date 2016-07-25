@@ -7,9 +7,40 @@
 //
 
 import UIKit
-
+import EventKit
 class TestViewController: UIViewController {
+    @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var testDatePicker: UIDatePicker!
+    @IBOutlet weak var testTitleField: UITextField!
+    
+///************************************************************
+    
+    
+    @IBAction func addTest(sender: AnyObject) {
+        
+        let title = testTitleField.text
+        let startDate = testDatePicker.date
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
+        
+        Event(title: title!, startDate: startDate, endDate: endDate).saveToRealm()
 
+    }
+    
+
+///************************************************************
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let secondDate = (self.parentViewController as! AddController).secondDate
+        let firstDate = (self.parentViewController as! AddController).firstDate
+        let selectedDate = (self.parentViewController as! AddController).selectedDate
+        
+        testDatePicker.date = selectedDate
+        testDatePicker.minimumDate = firstDate
+        testDatePicker.maximumDate = secondDate
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +51,5 @@ class TestViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

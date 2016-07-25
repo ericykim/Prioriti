@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import EventKit
+import RealmSwift
 
 class EventViewController: UIViewController {
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     
     
+    @IBOutlet weak var eventButton: UIButton!
+    @IBOutlet weak var eventDatePicker: UIDatePicker!
+    @IBOutlet weak var eventTitleField: UITextField!
     
+///*********************************************
     
+    @IBAction func addEvent(sender: AnyObject) {
+        
+        let title = eventTitleField.text
+        let startDate = eventDatePicker.date
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
+
+        Event(title: title!, startDate: startDate, endDate: endDate).saveToRealm()
+        
+    }
+
+///******************************************
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(eventTitleField.text)
         
         // Do any additional setup after loading the view.
     }
@@ -33,12 +49,14 @@ class EventViewController: UIViewController {
         let firstDate = (self.parentViewController as! AddController).firstDate
         let selectedDate = (self.parentViewController as! AddController).selectedDate
         
-        datePicker.date = selectedDate
-        datePicker.minimumDate = firstDate
-        datePicker.maximumDate = secondDate
-//        datePicker.date = formatter.stringFromDate(date)
+        eventDatePicker.date = selectedDate
+        eventDatePicker.minimumDate = firstDate
+        eventDatePicker.maximumDate = secondDate
+
         
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

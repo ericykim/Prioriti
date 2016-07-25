@@ -7,9 +7,40 @@
 //
 
 import UIKit
+import EventKit
 
 class HomeworkViewController: UIViewController {
+    
+    @IBOutlet weak var homeworkDatePicker: UIDatePicker!
+    @IBOutlet weak var homeworkButton: UIButton!
+    @IBOutlet weak var homeworkTitleField: UITextField!
+///************************************************************
+    
+    
+    @IBAction func addHomework(sender: AnyObject) {
+        
+        let title = homeworkTitleField.text
+        let startDate = homeworkDatePicker.date
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
+        Event(title: title!, startDate: startDate, endDate: endDate).saveToRealm()
+    }
+    
+    
+///************************************************************
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let secondDate = (self.parentViewController as! AddController).secondDate
+        let firstDate = (self.parentViewController as! AddController).firstDate
+        let selectedDate = (self.parentViewController as! AddController).selectedDate
+        
+        homeworkDatePicker.date = selectedDate
+        homeworkDatePicker.minimumDate = firstDate
+        homeworkDatePicker.maximumDate = secondDate
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +51,5 @@ class HomeworkViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
