@@ -27,10 +27,9 @@ class EventViewController: UIViewController {
         let startDate = eventDatePicker.date
         let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
-        Event(title: title!, startDate: startDate, endDate: endDate).saveToRealm()
-        
-    }
+        Event(title: title!, startDate: startDate, endDate: endDate, eventType: "event").saveToRealm()
 
+    }
 ///******************************************
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +40,7 @@ class EventViewController: UIViewController {
     
     let testString: String = "test"
     
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     

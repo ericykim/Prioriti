@@ -24,6 +24,8 @@ class TaskController: UIViewController, UITableViewDataSource {
         }
     }
     
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count ?? 0
     }
@@ -36,8 +38,21 @@ class TaskController: UIViewController, UITableViewDataSource {
         let event = events[row]
         
         formatter.dateFormat = "MM/dd/yyyy"
-        let dueDate = formatter.stringFromDate((event.startDate)!)
-
+        let dueDate = formatter.stringFromDate((event.startDate))
+        
+        switch event.priority {
+        case 1:
+            cell.backgroundColor = UIColor.redColor()
+        case 2:
+            cell.backgroundColor = UIColor.yellowColor()
+        case 3:
+            cell.backgroundColor = UIColor.greenColor()
+        case 4:
+            cell.backgroundColor = UIColor.whiteColor()
+        default:
+            cell.backgroundColor = UIColor.whiteColor()
+        }
+        
         cell.eventLabel.text = event.title
         cell.dateLabel.text = dueDate
         
@@ -46,9 +61,14 @@ class TaskController: UIViewController, UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         let selectedEvent = events[indexPath.row]
         print(selectedEvent.identifier)
         let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
+        if eventName == nil {
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            selectedEvent.deleteSelectedEvent(eventName!)
+        }
         print(eventName)
         selectedEvent.deleteSelectedEvent(eventName!)
 //        selectedEvent.delete()

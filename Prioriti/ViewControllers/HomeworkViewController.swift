@@ -23,7 +23,7 @@ class HomeworkViewController: UIViewController {
         let startDate = homeworkDatePicker.date
         let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
-        Event(title: title!, startDate: startDate, endDate: endDate).saveToRealm()
+        Event(title: title!, startDate: startDate, endDate: endDate, eventType: "homework").saveToRealm()
     }
     
     

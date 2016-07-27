@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-wJ-qWJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="0.0" y="142" width="600" height="389"/>
+                                <rect key="frame" x="0.0" y="137" width="600" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K6D-mm-iz0">
@@ -124,7 +124,7 @@
                             <constraint firstAttribute="trailing" secondItem="yc0-wJ-qWJ" secondAttribute="trailing" id="hRw-ql-fBc"/>
                             <constraint firstAttribute="trailing" secondItem="4G1-H8-Dpl" secondAttribute="trailing" constant="8" id="oRa-Rh-J0l"/>
                             <constraint firstItem="K6D-mm-iz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qQr-ym-gDP"/>
-                            <constraint firstItem="yc0-wJ-qWJ" firstAttribute="top" secondItem="K6D-mm-iz0" secondAttribute="bottom" constant="8" id="xs7-li-Hxe"/>
+                            <constraint firstItem="yc0-wJ-qWJ" firstAttribute="top" secondItem="K6D-mm-iz0" secondAttribute="bottom" constant="3" id="xs7-li-Hxe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6cW-jl-NuB">
@@ -158,10 +158,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-Gx-Ufx">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-Gx-Ufx">
                                 <rect key="frame" x="0.0" y="84" width="600" height="22"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Event">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,7 +180,7 @@
                                             <outletCollection property="otherButtons" destination="KaQ-Qg-vqI" id="OaE-ab-gFn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
                                         <rect key="frame" x="200" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Homework">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,7 +199,7 @@
                                             <outletCollection property="otherButtons" destination="ZCq-7l-Frd" id="q0l-N0-YiS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-Qg-vqI" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-Qg-vqI" customClass="DLRadioButton">
                                         <rect key="frame" x="400" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Test">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -526,39 +526,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="486"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-2e-XP2">
-                                <rect key="frame" x="0.0" y="72" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="490307651.673998">
-                                    <!--2016-07-15 20:34:11 +0000-->
-                                </date>
-                            </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-yl-2Xq">
-                                <rect key="frame" x="70" y="296" width="50" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VL8-Kb-KLb">
+                                <rect key="frame" x="20" y="20" width="560" height="357"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-Bi-mcl">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-sz-x6U">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLP-aO-b9x">
+                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-yl-2Xq">
+                                                        <rect key="frame" x="410" y="0.0" width="150" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="xFb-oB-bf7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="aUb-sz-x6U" firstAttribute="leading" secondItem="Ph0-Bi-mcl" secondAttribute="leading" id="Tno-7z-3Ta"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9br-54-71T">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP8-PR-6HR">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-2e-XP2">
+                                        <rect key="frame" x="0.0" y="91" width="560" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="490307651.673998">
+                                            <!--2016-07-15 20:34:11 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-4A-KiL">
+                                        <rect key="frame" x="0.0" y="327" width="560" height="30"/>
+                                        <state key="normal" title="Add Event"/>
+                                        <connections>
+                                            <action selector="addEvent:" destination="06r-vu-4zI" eventType="touchUpInside" id="CXU-Jv-Ucf"/>
+                                            <segue destination="0tN-4i-vcN" kind="unwind" unwindAction="canceltoPlanController:" id="6or-Fb-rPs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="CQi-js-T0P"/>
+                                    <constraint firstItem="Ph0-Bi-mcl" firstAttribute="leading" secondItem="VL8-Kb-KLb" secondAttribute="leading" id="AQc-g1-ZAd"/>
+                                    <constraint firstItem="7PA-4A-KiL" firstAttribute="leading" secondItem="VL8-Kb-KLb" secondAttribute="leading" id="BNT-qK-Gdb"/>
+                                    <constraint firstItem="9br-54-71T" firstAttribute="leading" secondItem="VL8-Kb-KLb" secondAttribute="leading" id="Uag-Pg-py0"/>
+                                    <constraint firstItem="hd3-2e-XP2" firstAttribute="leading" secondItem="VL8-Kb-KLb" secondAttribute="leading" id="ZRf-Gx-T9P"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-4A-KiL">
-                                <rect key="frame" x="0.0" y="27" width="600" height="30"/>
-                                <state key="normal" title="Add Event"/>
-                                <connections>
-                                    <action selector="addEvent:" destination="06r-vu-4zI" eventType="touchUpInside" id="CXU-Jv-Ucf"/>
-                                    <segue destination="0tN-4i-vcN" kind="unwind" unwindAction="canceltoPlanController:" id="6or-Fb-rPs"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
-                            <constraint firstItem="7PA-4A-KiL" firstAttribute="leading" secondItem="ZYQ-39-rH6" secondAttribute="leading" id="6HL-Ps-cUV"/>
-                            <constraint firstItem="hd3-2e-XP2" firstAttribute="leading" secondItem="ZYQ-39-rH6" secondAttribute="leading" id="Dp0-Yb-Qa7"/>
-                            <constraint firstItem="7PA-4A-KiL" firstAttribute="top" secondItem="3gK-ay-41L" secondAttribute="bottom" constant="27" id="P5O-au-gL0"/>
-                            <constraint firstAttribute="trailing" secondItem="hd3-2e-XP2" secondAttribute="trailing" id="SZe-Xx-U4H"/>
-                            <constraint firstAttribute="trailing" secondItem="7PA-4A-KiL" secondAttribute="trailing" id="Tgv-7d-JhH"/>
-                            <constraint firstItem="PlT-yl-2Xq" firstAttribute="leading" secondItem="ZYQ-39-rH6" secondAttribute="leadingMargin" constant="50" id="YAA-Gr-Lhc"/>
-                            <constraint firstItem="hd3-2e-XP2" firstAttribute="top" secondItem="3gK-ay-41L" secondAttribute="bottom" constant="72" id="pBu-qx-3vy"/>
-                            <constraint firstItem="PlT-yl-2Xq" firstAttribute="top" secondItem="hd3-2e-XP2" secondAttribute="bottom" constant="8" id="z3v-to-IG0"/>
+                            <constraint firstItem="VL8-Kb-KLb" firstAttribute="top" secondItem="3gK-ay-41L" secondAttribute="bottom" constant="20" id="WZ8-RD-2tx"/>
+                            <constraint firstItem="VL8-Kb-KLb" firstAttribute="leading" secondItem="ZYQ-39-rH6" secondAttribute="leading" constant="20" id="fBi-rx-ABs"/>
+                            <constraint firstAttribute="trailing" secondItem="VL8-Kb-KLb" secondAttribute="trailing" constant="20" id="gXK-MG-XMg"/>
                         </constraints>
                     </view>
                     <connections>
