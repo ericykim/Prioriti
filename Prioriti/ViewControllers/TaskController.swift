@@ -18,6 +18,7 @@ class TaskController: UIViewController, UITableViewDataSource {
 ///***************************************************************
     let formatter = NSDateFormatter()
     
+    
     var events: Results<Event>! {
         didSet {
             eventTableView.reloadData()
@@ -40,18 +41,7 @@ class TaskController: UIViewController, UITableViewDataSource {
         formatter.dateFormat = "MM/dd/yyyy"
         let dueDate = formatter.stringFromDate((event.startDate))
         
-        switch event.priority {
-        case 1:
-            cell.backgroundColor = UIColor.redColor()
-        case 2:
-            cell.backgroundColor = UIColor.yellowColor()
-        case 3:
-            cell.backgroundColor = UIColor.greenColor()
-        case 4:
-            cell.backgroundColor = UIColor.whiteColor()
-        default:
-            cell.backgroundColor = UIColor.whiteColor()
-        }
+        checkPriority(event, cell: cell)
         
         cell.eventLabel.text = event.title
         cell.dateLabel.text = dueDate
@@ -59,6 +49,20 @@ class TaskController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func checkPriority(event: Event, cell: EventsTableViewCell) {
+        switch event.priority {
+        case 1:
+            cell.backgroundColor = UIColor(colorWithHexValue: 0xD7263D)
+        case 2:
+            cell.backgroundColor = UIColor(colorWithHexValue: 0xFFED76)
+        case 3:
+            cell.backgroundColor = UIColor(colorWithHexValue: 0x1CD883)
+        case 4:
+            cell.backgroundColor = UIColor(colorWithHexValue: 0xFEFEFF)
+        default:
+            cell.backgroundColor = UIColor(colorWithHexValue: 0xFEFEFF)
+        }
+    }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -93,11 +97,34 @@ class TaskController: UIViewController, UITableViewDataSource {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         events = Event.retrieveEvent()
     }
 
     override func viewWillAppear(animated: Bool) {
-//        loadEvents()
+        super.viewWillAppear(animated)
+        
+        
+        
+        for event in events {
+            print(event.startDate)
+            
+            
+            
+            print(event.priority)
+            
+            let newEvent = Event()
+            
+            newEvent.title = event.title
+            newEvent.startDate = event.startDate
+            newEvent.endDate = event.endDate
+            newEvent.identifier = event.identifier
+            newEvent.eventType = event.eventType
+            newEvent.priority = event.priority
+            newEvent.prioritize(event.startDate)
+            Event.updateEvent(event, newEvent: newEvent)
+            eventTableView.reloadData()
+        }
         
     }
     override func didReceiveMemoryWarning() {
@@ -106,3 +133,14 @@ class TaskController: UIViewController, UITableViewDataSource {
     }
 }
 
+
+extension UIColor {
+    convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
+        self.init(
+            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(value & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
+    }
+}

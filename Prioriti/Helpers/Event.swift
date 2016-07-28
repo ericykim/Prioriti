@@ -53,7 +53,8 @@ class Event: Object {
         self.eventType = eventType
         self.priority = 0
         super.init()
-        prioritize()
+        prioritize(startDate)
+        print(priority)
         if let event = EventHelper.sharedInstance.createEvent(title, startDate: startDate, endDate: endDate) {
             identifier = event.eventIdentifier
         }
@@ -64,21 +65,9 @@ class Event: Object {
 
         
     }
-//    
-//    static func updateEvent(oldEvent: Event, newEvent: Event){
-//        let realm = try! Realm()
-//        try! realm.write(){
-//            oldEvent.title = newEvent.title
-//            oldEvent.startDate = newEvent.startDate
-//            oldEvent.endDate = newEvent.endDate
-//            oldEvent.identifier = newEvent.identifier
-//            oldEvent.eventType = newEvent.eventType
-//            
-//            oldEvent.priority =
-//            
-//        }
-//    }
-//    
+    
+
+    
     
         required init() {
             self.title = ""
@@ -113,13 +102,26 @@ class Event: Object {
     
 
     
-    func prioritize() {
+    func prioritize(startDate: NSDate) {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        
         let calendar: NSCalendar = NSCalendar.currentCalendar()
         let dueDate = calendar.startOfDayForDate(startDate)
-        let today = calendar.startOfDayForDate(NSDate())
+        
+        ////debug
+//        let fakedate = formatter.dateFromString("7/29/2016")
+//        let today = calendar.startOfDayForDate(fakedate!)
+        ////
+        
+      let today = calendar.startOfDayForDate(NSDate())
+        
         let flags = NSCalendarUnit.Day
         let components = calendar.components(flags, fromDate: today, toDate: dueDate, options: [])
-        print(components.day)
+        
+        print("difference is \(components.day)")
+        
         
         
         
@@ -127,72 +129,77 @@ class Event: Object {
             if eventType == EventType.Event.rawValue {
                 switch components.day {
                 case 0:
-                    print("0")
+                    
                     priority = 4
                 default:
-                    print("0")
+                    
                     priority = 4
                 }
             }
             if eventType == EventType.Homework.rawValue {
                 switch components.day {
                 case 0:
-                    print("1")
+                    
                     priority = 1
                 case 1:
-                    print("1")
+                    
                     priority = 1
                 case 2:
-                    print("1")
+                    print("hello")
                     priority = 1
                 case 3:
-                    print("2")
+                    
                     priority = 2
                 case 4:
-                    print("2")
+                    
                     priority = 2
                 default:
-                    print("3")
+                    
                     priority = 3
                 }
             }
             if eventType == EventType.Test.rawValue {
                 switch components.day {
                 case 0:
-                    print("1")
+                    
                     priority = 1
                 case 1:
-                    print("1")
+                    
                     priority = 1
                 case 2:
-                    print("1")
+                    
                     priority = 1
                 case 3:
-                    print("1")
+                    
                     priority = 1
                 case 4:
-                    print("1")
+                    
                     priority = 1
                 case 5:
-                    print("2")
+                    
                     priority = 2
                 case 6:
-                    print("2")
+                    
                     priority = 2
                 default:
-                    print("3")
+                    
                     priority = 3
                 }
             }
+            
+//            return priority
         }
         else {
-            print("0")
+            
             priority = 4
+            
+//            return priority
         }
+        
         
     }
     
-
+ 
     func deleteSelectedEvent(event: EKEvent) {
       EventHelper.sharedInstance.deleteEvent(event)
         deleteFromRealm()
@@ -217,6 +224,17 @@ class Event: Object {
     }
     
     
-
+    static func updateEvent(oldEvent: Event, newEvent: Event){
+        let realm = try! Realm()
+        try! realm.write(){
+            oldEvent.title = newEvent.title
+            oldEvent.startDate = newEvent.startDate
+            oldEvent.endDate = newEvent.endDate
+            oldEvent.identifier = newEvent.identifier
+            oldEvent.eventType = newEvent.eventType
+            oldEvent.priority = newEvent.priority
+            
+        }
+    }
 
 }
