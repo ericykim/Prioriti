@@ -10,7 +10,7 @@ import UIKit
 import EventKit
 import RealmSwift
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UITextFieldDelegate {
     
     
     
@@ -30,11 +30,18 @@ class EventViewController: UIViewController {
         Event(title: title!, startDate: startDate, endDate: endDate, eventType: "event").saveToRealm()
 
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 ///******************************************
     override func viewDidLoad() {
         super.viewDidLoad()
         print(eventTitleField.text)
-        
+        self.hideKeyboardWhenTappedAround()
+        self.eventTitleField.delegate = self
         // Do any additional setup after loading the view.
     }
     

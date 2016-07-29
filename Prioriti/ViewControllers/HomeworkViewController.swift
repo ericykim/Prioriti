@@ -9,7 +9,7 @@
 import UIKit
 import EventKit
 
-class HomeworkViewController: UIViewController {
+class HomeworkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var homeworkDatePicker: UIDatePicker!
     @IBOutlet weak var homeworkButton: UIButton!
@@ -24,6 +24,11 @@ class HomeworkViewController: UIViewController {
         let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
 
         Event(title: title!, startDate: startDate, endDate: endDate, eventType: "homework").saveToRealm()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     
@@ -43,7 +48,8 @@ class HomeworkViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
+        self.homeworkTitleField.delegate = self
         // Do any additional setup after loading the view.
     }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 import EventKit
-class TestViewController: UIViewController {
+class TestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var testDatePicker: UIDatePicker!
     @IBOutlet weak var testTitleField: UITextField!
@@ -24,6 +24,11 @@ class TestViewController: UIViewController {
         
         Event(title: title!, startDate: startDate, endDate: endDate, eventType: "test").saveToRealm()
 
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 
@@ -43,7 +48,8 @@ class TestViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
+        self.testTitleField.delegate = self
         // Do any additional setup after loading the view.
     }
 
