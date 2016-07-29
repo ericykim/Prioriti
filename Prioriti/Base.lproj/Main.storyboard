@@ -157,10 +157,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-Gx-Ufx">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-Gx-Ufx">
                                 <rect key="frame" x="0.0" y="84" width="600" height="22"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Event">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,7 +179,7 @@
                                             <outletCollection property="otherButtons" destination="KaQ-Qg-vqI" id="OaE-ab-gFn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
                                         <rect key="frame" x="200" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Homework">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,7 +198,7 @@
                                             <outletCollection property="otherButtons" destination="ZCq-7l-Frd" id="q0l-N0-YiS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-Qg-vqI" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-Qg-vqI" customClass="DLRadioButton">
                                         <rect key="frame" x="400" y="0.0" width="200" height="22"/>
                                         <state key="normal" title="Test">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,7 +243,7 @@
                                     <constraint firstAttribute="height" constant="64" id="sNt-13-ihm"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="llZ-Lw-clo">
+                                    <navigationItem id="llZ-Lw-clo">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CWT-c5-8FV">
                                             <connections>
                                                 <segue destination="P8f-sI-ETS" kind="unwind" unwindAction="canceltoPlanController:" id="PTd-vn-uL9"/>
