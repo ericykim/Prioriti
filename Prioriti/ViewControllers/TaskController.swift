@@ -66,6 +66,9 @@ class TaskController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
+
+        
+        
         let selectedEvent = events[indexPath.row]
         print(selectedEvent.identifier)
         let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)

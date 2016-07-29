@@ -10,4 +10,5 @@ target 'Prioriti' do
 pod 'JTAppleCalendar'
 pod 'DLRadioButton', '~> 1.4'
 pod 'RealmSwift'
+pod 'MGSwipeTableCell'
 end
