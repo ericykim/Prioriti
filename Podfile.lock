@@ -1,6 +1,7 @@
 PODS:
   - DLRadioButton (1.4.8)
   - JTAppleCalendar (4.0.3)
+  - MGSwipeTableCell (1.5.5)
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
@@ -10,14 +11,16 @@ PODS:
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
   - JTAppleCalendar
+  - MGSwipeTableCell
   - RealmSwift
 
 SPEC CHECKSUMS:
   DLRadioButton: 8fe4865b3ea8a5236e1d114dd283dd0884d3dc46
   JTAppleCalendar: e92e2de6b4beea7dcd14eb2ba8ae3a6122fdf6d0
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
 
-PODFILE CHECKSUM: a1087147c2d9cb3fdebb9544a9628c7aea4c7633
+PODFILE CHECKSUM: ed243947b629d0ca7c94de4a8d97804e94d9dbdb
 
 COCOAPODS: 1.0.1

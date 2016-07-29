@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class EventsTableViewCell: UITableViewCell {
+class EventsTableViewCell: MGSwipeTableCell {
 
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
+    override func expandSwipe(direction: MGSwipeDirection, animated: Bool) {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +28,7 @@ class EventsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }

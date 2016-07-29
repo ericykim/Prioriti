@@ -10,6 +10,7 @@ import UIKit
 import EventKit
 import Realm
 import RealmSwift
+import MGSwipeTableCell
 
 class TaskController: UIViewController, UITableViewDataSource {
     
@@ -46,8 +47,50 @@ class TaskController: UIViewController, UITableViewDataSource {
         cell.eventLabel.text = event.title
         cell.dateLabel.text = dueDate
         
+        
+////delete swipe
+        cell.rightExpansion.fillOnTrigger = true
+        cell.rightExpansion.buttonIndex = 0
+        
+        
+        
+        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            let selectedEvent = self.events[indexPath.row]
+            print(selectedEvent.identifier)
+            let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
+            if eventName == nil {
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                selectedEvent.deleteSelectedEvent(eventName!)
+            }
+            print(eventName)
+            selectedEvent.deleteSelectedEvent(eventName!)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            
+            print("Convenience callback for delete button!")
+            return true
+        })]
+//
+//        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor())]
+        
+        
+//        cell.rightExpansion.expansionColor = UIColor.redColor()
+//        cell.rightExpansion.fillOnTrigger = true
+//        
+//        cell.rightSwipeSettings.transition = MGSwipeTransition.Drag
+        
+
+        
+        //configure left buttons
+        //cell.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor())]
+//        cell.leftSwipeSettings.transition = MGSwipeTransition.ClipCenter
+
+        
         return cell
     }
+    
+    
+    
     
     func checkPriority(event: Event, cell: EventsTableViewCell) {
         switch event.priority {
@@ -64,25 +107,28 @@ class TaskController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let selectedEvent = events[indexPath.row]
-        print(selectedEvent.identifier)
-        let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
-        if eventName == nil {
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            selectedEvent.deleteSelectedEvent(eventName!)
-        }
-        print(eventName)
-        selectedEvent.deleteSelectedEvent(eventName!)
-//        selectedEvent.delete()
-//        events = Event.retrieveEvent()
-//        EventHelper.sharedInstance.deleteEvent(selectedEvent)
-//        self.events?.removeAtIndex(indexPath.row)
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        print("hello")
-        
-    }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//
+//        
+//        
+//        let selectedEvent = events[indexPath.row]
+//        print(selectedEvent.identifier)
+//        let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
+//        if eventName == nil {
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//            selectedEvent.deleteSelectedEvent(eventName!)
+//        }
+//        print(eventName)
+//        selectedEvent.deleteSelectedEvent(eventName!)
+////        selectedEvent.delete()
+////        events = Event.retrieveEvent()
+////        EventHelper.sharedInstance.deleteEvent(selectedEvent)
+////        self.events?.removeAtIndex(indexPath.row)
+//        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//        print("hello")
+//        
+//    }
     
 
     

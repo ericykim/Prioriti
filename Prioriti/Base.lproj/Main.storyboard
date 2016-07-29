@@ -243,7 +243,7 @@
                                     <constraint firstAttribute="height" constant="64" id="sNt-13-ihm"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="llZ-Lw-clo">
+                                    <navigationItem id="llZ-Lw-clo">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CWT-c5-8FV">
                                             <connections>
                                                 <segue destination="P8f-sI-ETS" kind="unwind" unwindAction="canceltoPlanController:" id="PTd-vn-uL9"/>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B4021B631D3EE06500C0267F /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4021B621D3EE06500C0267F /* TaskController.swift */; };
-		B40C102B1D46C9AB009325B5 /* EventSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C102A1D46C9AB009325B5 /* EventSubclass.swift */; };
 		B417FBA61D380191009C8BE6 /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417FB9F1D380191009C8BE6 /* AddController.swift */; };
 		B417FBA71D380191009C8BE6 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417FBA01D380191009C8BE6 /* PlanController.swift */; };
 		B417FBA81D380191009C8BE6 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417FBA11D380191009C8BE6 /* CellView.swift */; };
@@ -33,13 +32,13 @@
 		68D59722AE1158EC88C32152 /* Pods-Prioriti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prioriti.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prioriti/Pods-Prioriti.release.xcconfig"; sourceTree = "<group>"; };
 		90A07BF5EBC5161E4267F2E6 /* Pods_Prioriti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prioriti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4021B621D3EE06500C0267F /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
-		B40C102A1D46C9AB009325B5 /* EventSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSubclass.swift; sourceTree = "<group>"; };
 		B417FB9F1D380191009C8BE6 /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddController.swift; path = ../../../Example/JTAppleCalendar/AddController.swift; sourceTree = "<group>"; };
 		B417FBA01D380191009C8BE6 /* PlanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanController.swift; path = ../../../Example/JTAppleCalendar/PlanController.swift; sourceTree = "<group>"; };
 		B417FBA11D380191009C8BE6 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellView.swift; path = ../../../Example/JTAppleCalendar/CellView.swift; sourceTree = "<group>"; };
 		B417FBA21D380191009C8BE6 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellView.xib; path = ../../../Example/JTAppleCalendar/CellView.xib; sourceTree = "<group>"; };
 		B417FBA31D380191009C8BE6 /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationClass.swift; path = ../../../Example/JTAppleCalendar/AnimationClass.swift; sourceTree = "<group>"; };
 		B417FBA51D380191009C8BE6 /* CodeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeCellView.swift; path = ../../../Example/JTAppleCalendar/CodeCellView.swift; sourceTree = "<group>"; };
+		B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Prioriti-Bridging-Header.h"; path = "Prioriti/Prioriti-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B46519711D38363B0066E78B /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../ViewControllers/EventViewController.swift; sourceTree = "<group>"; };
 		B46519751D3836FD0066E78B /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeworkViewController.swift; path = ../ViewControllers/HomeworkViewController.swift; sourceTree = "<group>"; };
 		B46519791D38454B0066E78B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../ViewControllers/TestViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 				B4C3B4191D3FE06500F4D0E3 /* EventViewControllers */,
 				B465196D1D3818B90066E78B /* ViewControllers */,
 				B47601F51D38000800BEBDAD /* Main.storyboard */,
+				B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */,
 				B47601F81D38000800BEBDAD /* Assets.xcassets */,
 				B47601FA1D38000800BEBDAD /* LaunchScreen.storyboard */,
 				B47601F11D38000800BEBDAD /* AppDelegate.swift */,
@@ -134,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				B4869A3F1D428C42006184B8 /* Event.swift */,
-				B40C102A1D46C9AB009325B5 /* EventSubclass.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -303,7 +302,6 @@
 				B46519721D38363B0066E78B /* EventViewController.swift in Sources */,
 				B47601F21D38000800BEBDAD /* AppDelegate.swift in Sources */,
 				B417FBAA1D380191009C8BE6 /* AnimationClass.swift in Sources */,
-				B40C102B1D46C9AB009325B5 /* EventSubclass.swift in Sources */,
 				B4869A401D428C42006184B8 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +422,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erickim.Prioriti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prioriti/Prioriti-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -436,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erickim.Prioriti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prioriti/Prioriti-Bridging-Header.h";
 			};
 			name = Release;
 		};
