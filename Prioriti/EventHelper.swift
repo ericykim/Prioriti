@@ -39,6 +39,12 @@ class EventHelper {
 ///********
     
     func deleteEvent(selectedEvent: EKEvent) {
+        
+        
+        //if eventdoesnt exist 
+    
+//        eventStore.eventWithIdentifier(selectedEvent.eventIdentifier)
+        
         do {
             try eventStore.removeEvent(selectedEvent, span: EKSpan.ThisEvent, commit: true)
         }

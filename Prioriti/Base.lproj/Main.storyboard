@@ -29,10 +29,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-wJ-qWJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="0.0" y="137" width="600" height="394"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K6D-mm-iz0">
                                 <rect key="frame" x="0.0" y="114" width="600" height="20"/>
                                 <subviews>
@@ -108,6 +104,10 @@
                                     <action selector="goToCurrentDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1M2-K7-syQ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-wJ-qWJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="0.0" y="137" width="600" height="394"/>
+                                <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -135,6 +135,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundView" destination="8bC-Xf-vdC" id="bUd-tg-STT"/>
                         <outlet property="calendarView" destination="yc0-wJ-qWJ" id="riq-Y3-ejP"/>
                         <outlet property="currentDate" destination="4G1-H8-Dpl" id="VqK-ns-I3U"/>
                         <outlet property="monthLabel" destination="pyE-63-H0g" id="OTQ-qF-vEk"/>
@@ -368,19 +369,30 @@
                                     <outlet property="dataSource" destination="ugf-dJ-gwo" id="UPp-sV-OYP"/>
                                 </connections>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emr-K4-inJ" userLabel="Empty Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <segue destination="ONd-bi-Rwa" kind="embed" id="K8H-LR-Z2u"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="emr-K4-inJ" firstAttribute="leading" secondItem="UQy-Qt-vMy" secondAttribute="leading" id="9NQ-WA-4nC"/>
                             <constraint firstAttribute="trailing" secondItem="Obu-dT-BAR" secondAttribute="trailing" id="DtJ-QW-TiC"/>
+                            <constraint firstItem="emr-K4-inJ" firstAttribute="top" secondItem="UQy-Qt-vMy" secondAttribute="top" id="Ioy-Jo-qLY"/>
+                            <constraint firstAttribute="bottom" secondItem="emr-K4-inJ" secondAttribute="bottom" constant="49" id="JId-CP-yS8"/>
                             <constraint firstItem="Obu-dT-BAR" firstAttribute="top" secondItem="UQy-Qt-vMy" secondAttribute="top" constant="20" id="jKi-cQ-uSR"/>
                             <constraint firstItem="Obu-dT-BAR" firstAttribute="leading" secondItem="UQy-Qt-vMy" secondAttribute="leading" id="k7d-U3-Fpo"/>
                             <constraint firstItem="Hui-y9-rK3" firstAttribute="top" secondItem="Obu-dT-BAR" secondAttribute="bottom" id="uuX-Qb-pKY"/>
+                            <constraint firstAttribute="trailing" secondItem="emr-K4-inJ" secondAttribute="trailing" id="xpN-Oc-N0I"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Todo List_50" id="qAx-Eb-JZb">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="emptyTableView" destination="emr-K4-inJ" id="xg2-Fu-dOJ"/>
                         <outlet property="eventTableView" destination="Obu-dT-BAR" id="sck-ED-RE1"/>
                     </connections>
                 </viewController>
@@ -671,6 +683,20 @@
                 <exit id="0tN-4i-vcN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4053" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ct0-y4-cKF">
+            <objects>
+                <viewController id="ONd-bi-Rwa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bgy-UP-yih">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpr-XL-EjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2141" y="1477"/>
         </scene>
     </scenes>
     <resources>

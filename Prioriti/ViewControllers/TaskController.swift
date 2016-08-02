@@ -16,6 +16,7 @@ class TaskController: UIViewController, UITableViewDataSource {
     
 
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var emptyTableView: UIView!
 ///***************************************************************
     let formatter = NSDateFormatter()
     
@@ -26,9 +27,40 @@ class TaskController: UIViewController, UITableViewDataSource {
         }
     }
     
+    
+    //            var userDates = [NSDate]()
+    //            let userEvents = Event.retrieveEvent()
+    //            for event in userEvents {
+    //                userDates.append(event.startDate)
+    
+    func noEventView() {
+        print("start func")
+        print(events.count)
+        if events.count == 0 {
+            print("empty table view")
+            emptyTableView.hidden = false
+        }
+        else {
+            emptyTableView.hidden = true
+        }
+//        for event in eventArrayData {
+//            eventArray.append(event.startDate)
+//            print(eventArray.count)
+//            print("is it wokring")
+//            if eventArray.count == 0 {
+//                print("hello")
+//            }
+//            else{
+//                print("else")
+//            }
+//        }
+    }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            noEventView()
+        }
         return events.count ?? 0
     }
     
@@ -60,12 +92,17 @@ class TaskController: UIViewController, UITableViewDataSource {
             print(selectedEvent.identifier)
             let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
             if eventName == nil {
+                event.deleteFromRealm()
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            }
+            else {
                 selectedEvent.deleteSelectedEvent(eventName!)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             }
             print(eventName)
-            selectedEvent.deleteSelectedEvent(eventName!)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//            event.deleteFromRealm()
+//            selectedEvent.deleteSelectedEvent(eventName!)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             
             print("Convenience callback for delete button!")
             return true
@@ -140,6 +177,7 @@ class TaskController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         events = Event.retrieveEvent()
+        noEventView()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -149,7 +187,7 @@ class TaskController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        noEventView()
         
         
         for event in events {
