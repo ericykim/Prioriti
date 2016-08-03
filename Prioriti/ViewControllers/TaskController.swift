@@ -17,6 +17,8 @@ class TaskController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var emptyTableView: UIView!
+    
+    
 ///***************************************************************
     let formatter = NSDateFormatter()
     
@@ -34,6 +36,7 @@ class TaskController: UIViewController, UITableViewDataSource {
     //                userDates.append(event.startDate)
     
     func noEventView() {
+        emptyTableView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
         print("start func")
         print(events.count)
         if events.count == 0 {
@@ -187,6 +190,7 @@ class TaskController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         noEventView()
         
         

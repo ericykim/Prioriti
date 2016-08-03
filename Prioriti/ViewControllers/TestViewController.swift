@@ -12,6 +12,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var testDatePicker: UIDatePicker!
     @IBOutlet weak var testTitleField: UITextField!
+    @IBOutlet var testView: UIView!
     
 ///************************************************************
     
@@ -48,6 +49,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        testView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
         self.hideKeyboardWhenTappedAround()
         self.testTitleField.delegate = self
         // Do any additional setup after loading the view.

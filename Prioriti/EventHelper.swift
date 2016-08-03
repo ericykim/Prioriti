@@ -42,6 +42,7 @@ class EventHelper {
         
         
         //if eventdoesnt exist 
+        
     
 //        eventStore.eventWithIdentifier(selectedEvent.eventIdentifier)
         

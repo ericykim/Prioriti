@@ -18,6 +18,7 @@ class EventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var eventDatePicker: UIDatePicker!
     @IBOutlet weak var eventTitleField: UITextField!
+    @IBOutlet var eventView: UIView!
     
 ///*********************************************
     
@@ -42,6 +43,8 @@ class EventViewController: UIViewController, UITextFieldDelegate {
         print(eventTitleField.text)
         self.hideKeyboardWhenTappedAround()
         self.eventTitleField.delegate = self
+        
+        eventView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
         // Do any additional setup after loading the view.
     }
     

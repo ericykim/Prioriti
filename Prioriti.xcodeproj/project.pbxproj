@@ -15,6 +15,7 @@
 		B417FBAA1D380191009C8BE6 /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417FBA31D380191009C8BE6 /* AnimationClass.swift */; };
 		B417FBAC1D380191009C8BE6 /* CodeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417FBA51D380191009C8BE6 /* CodeCellView.swift */; };
 		B44653AC1D4C13B40035FCEA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44653AB1D4C13B40035FCEA /* Event.swift */; };
+		B44653AF1D5271450035FCEA /* EmptyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */; };
 		B46519721D38363B0066E78B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46519711D38363B0066E78B /* EventViewController.swift */; };
 		B46519761D3836FD0066E78B /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46519751D3836FD0066E78B /* HomeworkViewController.swift */; };
 		B465197A1D38454B0066E78B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46519791D38454B0066E78B /* TestViewController.swift */; };
@@ -31,7 +32,7 @@
 		19BE867DBF527C33D1B578E8 /* Pods-Prioriti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prioriti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prioriti/Pods-Prioriti.debug.xcconfig"; sourceTree = "<group>"; };
 		68D59722AE1158EC88C32152 /* Pods-Prioriti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prioriti.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prioriti/Pods-Prioriti.release.xcconfig"; sourceTree = "<group>"; };
 		90A07BF5EBC5161E4267F2E6 /* Pods_Prioriti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prioriti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4021B621D3EE06500C0267F /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		B4021B621D3EE06500C0267F /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskController.swift; path = ../ViewControllers/TaskController.swift; sourceTree = "<group>"; };
 		B417FB9F1D380191009C8BE6 /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddController.swift; path = ../../../Example/JTAppleCalendar/AddController.swift; sourceTree = "<group>"; };
 		B417FBA01D380191009C8BE6 /* PlanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanController.swift; path = ../../../Example/JTAppleCalendar/PlanController.swift; sourceTree = "<group>"; };
 		B417FBA11D380191009C8BE6 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellView.swift; path = ../../../Example/JTAppleCalendar/CellView.swift; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		B417FBA51D380191009C8BE6 /* CodeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeCellView.swift; path = ../../../Example/JTAppleCalendar/CodeCellView.swift; sourceTree = "<group>"; };
 		B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Prioriti-Bridging-Header.h"; path = "Prioriti/Prioriti-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B44653AB1D4C13B40035FCEA /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Prioriti/Helpers/Event.swift; sourceTree = SOURCE_ROOT; };
+		B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewController.swift; sourceTree = "<group>"; };
 		B46519711D38363B0066E78B /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../ViewControllers/EventViewController.swift; sourceTree = "<group>"; };
 		B46519751D3836FD0066E78B /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeworkViewController.swift; path = ../ViewControllers/HomeworkViewController.swift; sourceTree = "<group>"; };
 		B46519791D38454B0066E78B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../ViewControllers/TestViewController.swift; sourceTree = "<group>"; };
@@ -73,12 +75,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B44653AD1D5270EC0035FCEA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B4021B621D3EE06500C0267F /* TaskController.swift */,
+				B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */,
+				B4FDB8801D418302000320A4 /* EventsTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		B465196D1D3818B90066E78B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				B417FBA01D380191009C8BE6 /* PlanController.swift */,
-				B417FB9F1D380191009C8BE6 /* AddController.swift */,
-				B4021B621D3EE06500C0267F /* TaskController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 				B465196E1D3818DE0066E78B /* CellView */,
 				B4C3B4191D3FE06500F4D0E3 /* EventViewControllers */,
 				B465196D1D3818B90066E78B /* ViewControllers */,
+				B44653AD1D5270EC0035FCEA /* TableView */,
 				B47601F51D38000800BEBDAD /* Main.storyboard */,
 				B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */,
 				B47601F81D38000800BEBDAD /* Assets.xcassets */,
@@ -144,7 +155,7 @@
 				B46519711D38363B0066E78B /* EventViewController.swift */,
 				B46519751D3836FD0066E78B /* HomeworkViewController.swift */,
 				B46519791D38454B0066E78B /* TestViewController.swift */,
-				B4FDB8801D418302000320A4 /* EventsTableViewCell.swift */,
+				B417FB9F1D380191009C8BE6 /* AddController.swift */,
 			);
 			path = EventViewControllers;
 			sourceTree = "<group>";
@@ -295,6 +306,7 @@
 				B465197A1D38454B0066E78B /* TestViewController.swift in Sources */,
 				B417FBAC1D380191009C8BE6 /* CodeCellView.swift in Sources */,
 				B4FDB8811D418302000320A4 /* EventsTableViewCell.swift in Sources */,
+				B44653AF1D5271450035FCEA /* EmptyTableViewController.swift in Sources */,
 				B417FBA71D380191009C8BE6 /* PlanController.swift in Sources */,
 				B46519761D3836FD0066E78B /* HomeworkViewController.swift in Sources */,
 				B4C3B4431D40466B00F4D0E3 /* EventHelper.swift in Sources */,

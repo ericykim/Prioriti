@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Calendar_50.png",
+      "filename" : "Group 2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Calendar_100.png",
+      "filename" : "Group 2@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Calendar_150.png",
+      "filename" : "Group 2@3x.png",
       "scale" : "3x"
     }
   ],

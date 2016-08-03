@@ -14,6 +14,7 @@ class HomeworkViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var homeworkDatePicker: UIDatePicker!
     @IBOutlet weak var homeworkButton: UIButton!
     @IBOutlet weak var homeworkTitleField: UITextField!
+    @IBOutlet var homeworkView: UIView!
 ///************************************************************
     
     
@@ -48,6 +49,7 @@ class HomeworkViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeworkView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
         self.hideKeyboardWhenTappedAround()
         self.homeworkTitleField.delegate = self
         // Do any additional setup after loading the view.
