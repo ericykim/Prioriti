@@ -97,32 +97,37 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G1-H8-Dpl">
-                                <rect key="frame" x="540" y="75" width="52" height="30"/>
-                                <state key="normal" title="Current"/>
-                                <connections>
-                                    <action selector="goToCurrentDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1M2-K7-syQ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-wJ-qWJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                 <rect key="frame" x="0.0" y="137" width="600" height="394"/>
                                 <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G1-H8-Dpl">
+                                <rect key="frame" x="530" y="65" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="3VM-Da-Vqa"/>
+                                    <constraint firstAttribute="height" constant="50" id="dBu-TK-WIa"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <state key="normal" title="Current" image="Present_50-1"/>
+                                <connections>
+                                    <action selector="goToCurrentDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1M2-K7-syQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pyE-63-H0g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="2cg-Z1-DdL"/>
+                            <constraint firstItem="4G1-H8-Dpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="4cT-sL-9Ka"/>
                             <constraint firstItem="pyE-63-H0g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5yH-eP-pYA"/>
                             <constraint firstAttribute="trailing" secondItem="K6D-mm-iz0" secondAttribute="trailing" id="6vf-aC-48y"/>
-                            <constraint firstItem="4G1-H8-Dpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="9vs-Ps-l6s"/>
                             <constraint firstItem="1WR-Nv-fVK" firstAttribute="leading" secondItem="pyE-63-H0g" secondAttribute="trailing" constant="8" id="CQC-XL-yJk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yc0-wJ-qWJ" secondAttribute="bottom" constant="20" id="MfB-7R-tJp"/>
                             <constraint firstItem="K6D-mm-iz0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="SwB-51-qXn"/>
                             <constraint firstItem="1WR-Nv-fVK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="T7m-PT-V7t"/>
                             <constraint firstItem="yc0-wJ-qWJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h3n-fn-nIo"/>
                             <constraint firstAttribute="trailing" secondItem="yc0-wJ-qWJ" secondAttribute="trailing" id="hRw-ql-fBc"/>
-                            <constraint firstAttribute="trailing" secondItem="4G1-H8-Dpl" secondAttribute="trailing" constant="8" id="oRa-Rh-J0l"/>
                             <constraint firstItem="K6D-mm-iz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qQr-ym-gDP"/>
+                            <constraint firstAttribute="trailing" secondItem="4G1-H8-Dpl" secondAttribute="trailing" constant="20" id="xhs-YG-SN8"/>
                             <constraint firstItem="yc0-wJ-qWJ" firstAttribute="top" secondItem="K6D-mm-iz0" secondAttribute="bottom" constant="3" id="xs7-li-Hxe"/>
                         </constraints>
                     </view>
@@ -455,10 +460,10 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-Wa-Cfv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-Wa-Cfv">
                                         <rect key="frame" x="0.0" y="35" width="560" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-Ma-BqG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-Ma-BqG">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,7 +474,7 @@
                                             <constraint firstAttribute="height" constant="20" id="7Jd-b7-efK"/>
                                         </constraints>
                                     </stackView>
-                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-YS-uDa">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-YS-uDa">
                                         <rect key="frame" x="0.0" y="60" width="560" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="YtL-ZN-VmF"/>
@@ -478,7 +483,7 @@
                                             <!--2016-07-19 21:58:19 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66T-bh-AUv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66T-bh-AUv">
                                         <rect key="frame" x="0.0" y="265" width="560" height="181"/>
                                         <state key="normal" image="add test"/>
                                         <connections>
@@ -572,7 +577,7 @@
                                             <!--2016-07-19 21:58:12 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McX-fz-sCb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McX-fz-sCb">
                                         <rect key="frame" x="0.0" y="265" width="560" height="181"/>
                                         <state key="normal" image="add homework"/>
                                         <connections>
@@ -643,10 +648,10 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9br-54-71T">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9br-54-71T">
                                         <rect key="frame" x="0.0" y="35" width="560" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP8-PR-6HR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP8-PR-6HR">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -657,7 +662,7 @@
                                             <constraint firstAttribute="height" constant="20" id="4bF-tR-n4T"/>
                                         </constraints>
                                     </stackView>
-                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-2e-XP2">
+                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-2e-XP2">
                                         <rect key="frame" x="0.0" y="60" width="560" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="LcQ-bj-i9v"/>
@@ -666,7 +671,7 @@
                                             <!--2016-07-15 20:34:11 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-4A-KiL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-4A-KiL">
                                         <rect key="frame" x="0.0" y="265" width="560" height="181"/>
                                         <state key="normal" image="add event"/>
                                         <connections>
@@ -738,6 +743,7 @@
     <resources>
         <image name="Group 2" width="118" height="117"/>
         <image name="Group 3-1" width="30" height="30"/>
+        <image name="Present_50-1" width="50" height="50"/>
         <image name="Todo List_500" width="26" height="23"/>
         <image name="add event" width="242" height="42"/>
         <image name="add homework" width="242" height="42"/>
