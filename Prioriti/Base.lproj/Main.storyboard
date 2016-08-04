@@ -102,12 +102,12 @@
                                 <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G1-H8-Dpl">
-                                <rect key="frame" x="530" y="65" width="50" height="50"/>
+                                <rect key="frame" x="550" y="65" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3VM-Da-Vqa"/>
-                                    <constraint firstAttribute="height" constant="50" id="dBu-TK-WIa"/>
+                                    <constraint firstAttribute="width" constant="50" id="aJZ-ED-4XY"/>
+                                    <constraint firstAttribute="height" constant="50" id="liW-le-0Fk"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Current" image="Present_50-1"/>
                                 <connections>
                                     <action selector="goToCurrentDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1M2-K7-syQ"/>
@@ -117,17 +117,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pyE-63-H0g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="2cg-Z1-DdL"/>
-                            <constraint firstItem="4G1-H8-Dpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="4cT-sL-9Ka"/>
                             <constraint firstItem="pyE-63-H0g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5yH-eP-pYA"/>
                             <constraint firstAttribute="trailing" secondItem="K6D-mm-iz0" secondAttribute="trailing" id="6vf-aC-48y"/>
+                            <constraint firstItem="4G1-H8-Dpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="CAM-vl-d7t"/>
                             <constraint firstItem="1WR-Nv-fVK" firstAttribute="leading" secondItem="pyE-63-H0g" secondAttribute="trailing" constant="8" id="CQC-XL-yJk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yc0-wJ-qWJ" secondAttribute="bottom" constant="20" id="MfB-7R-tJp"/>
                             <constraint firstItem="K6D-mm-iz0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="SwB-51-qXn"/>
                             <constraint firstItem="1WR-Nv-fVK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="T7m-PT-V7t"/>
                             <constraint firstItem="yc0-wJ-qWJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h3n-fn-nIo"/>
+                            <constraint firstAttribute="trailing" secondItem="4G1-H8-Dpl" secondAttribute="trailing" id="hPV-XE-hYn"/>
                             <constraint firstAttribute="trailing" secondItem="yc0-wJ-qWJ" secondAttribute="trailing" id="hRw-ql-fBc"/>
                             <constraint firstItem="K6D-mm-iz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qQr-ym-gDP"/>
-                            <constraint firstAttribute="trailing" secondItem="4G1-H8-Dpl" secondAttribute="trailing" constant="20" id="xhs-YG-SN8"/>
                             <constraint firstItem="yc0-wJ-qWJ" firstAttribute="top" secondItem="K6D-mm-iz0" secondAttribute="bottom" constant="3" id="xs7-li-Hxe"/>
                         </constraints>
                     </view>
@@ -175,12 +175,6 @@
                                     <segue destination="5Kr-ch-4zD" kind="embed" id="ukQ-Jx-qaj"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evb-xv-OlA" userLabel="Event Container">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <connections>
-                                    <segue destination="06r-vu-4zI" kind="embed" id="i0l-Fx-w8g"/>
-                                </connections>
-                            </containerView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-Vm-ve7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
@@ -199,27 +193,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-Gx-Ufx">
                                 <rect key="frame" x="0.0" y="71" width="600" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="35"/>
-                                        <state key="normal" title="Event">
-                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                <color key="value" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
-                                                <color key="value" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="showEventContainer:" destination="0wd-0e-3o2" eventType="touchUpInside" id="2s2-cU-A6g"/>
-                                            <outletCollection property="otherButtons" destination="pez-WB-ou5" id="csi-za-5yB"/>
-                                            <outletCollection property="otherButtons" destination="KaQ-Qg-vqI" id="OaE-ab-gFn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pez-WB-ou5" customClass="DLRadioButton">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="35"/>
                                         <state key="normal" title="Homework">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -238,7 +213,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-Qg-vqI" customClass="DLRadioButton">
-                                        <rect key="frame" x="400" y="0.0" width="200" height="35"/>
+                                        <rect key="frame" x="200" y="0.0" width="200" height="35"/>
                                         <state key="normal" title="Test">
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -256,6 +231,25 @@
                                             <outletCollection property="otherButtons" destination="ZCq-7l-Frd" id="u9U-Qf-NtE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-7l-Frd" customClass="DLRadioButton">
+                                        <rect key="frame" x="400" y="0.0" width="200" height="35"/>
+                                        <state key="normal" title="Event">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showEventContainer:" destination="0wd-0e-3o2" eventType="touchUpInside" id="2s2-cU-A6g"/>
+                                            <outletCollection property="otherButtons" destination="pez-WB-ou5" id="csi-za-5yB"/>
+                                            <outletCollection property="otherButtons" destination="KaQ-Qg-vqI" id="OaE-ab-gFn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pez-WB-ou5" firstAttribute="top" secondItem="Dsh-Gx-Ufx" secondAttribute="top" id="4zR-6n-i1j"/>
@@ -264,6 +258,12 @@
                                     <constraint firstItem="ZCq-7l-Frd" firstAttribute="top" secondItem="Dsh-Gx-Ufx" secondAttribute="top" id="tg0-PV-SHM"/>
                                 </constraints>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evb-xv-OlA" userLabel="Event Container">
+                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <connections>
+                                    <segue destination="06r-vu-4zI" kind="embed" id="i0l-Fx-w8g"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

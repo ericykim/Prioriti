@@ -25,10 +25,16 @@ class AddController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         addView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
+        eventContainer.hidden = true
+        homeworkContainer.hidden = false
+        testContainer.hidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventContainer.hidden = true
+        homeworkContainer.hidden = false
+        testContainer.hidden = true
         
         
     }
