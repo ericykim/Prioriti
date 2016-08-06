@@ -50,7 +50,7 @@ class PlanController: UIViewController {
             firstDate.firstDate = formatter.dateFromString("01/01/2014")
             
             let secondDate = segue.destinationViewController as! AddController
-            secondDate.secondDate = formatter.dateFromString("01/01/2020")
+            secondDate.secondDate = formatter.dateFromString("01/01/2025")
             
             let choosenDate = segue.destinationViewController as! AddController
             choosenDate.selectedDate = selectedDate

@@ -39,12 +39,14 @@ class TaskController: UIViewController, UITableViewDataSource {
         emptyTableView.backgroundColor = UIColor(colorWithHexValue: 0xEFFCFC)
         print("start func")
         print(events.count)
-        if events.count == 0 {
+        if pastArray.isEmpty && upcomingArray.isEmpty && eventsArray.isEmpty {
             print("empty table view")
-            emptyTableView.hidden = false
+            self.emptyTableView.hidden = false
+            self.eventTableView.hidden = true
         }
         else {
             emptyTableView.hidden = true
+            eventTableView.hidden = false
         }
 //        for event in eventArrayData {
 //            eventArray.append(event.startDate)
@@ -58,26 +60,105 @@ class TaskController: UIViewController, UITableViewDataSource {
 //            }
 //        }
     }
-
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            noEventView()
-        }
-        return events.count ?? 0
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return upcomingArray.count
+        case 1:
+            return eventsArray.count
+        case 2:
+            return pastArray.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        switch (section) {
+        case 0:
+            return  "Upcoming Work"
+        //return sectionHeaderView
+        case 1:
+            return "Events"
+        //return sectionHeaderView
+        case 2:
+            return "Past"
+        //return sectionHeaderView
+        default:
+            break
+        }
+        
+        return ""
+    }
+    
+    
+    var upcomingArray: [Event] = []
+    var eventsArray: [Event] = []
+    var pastArray: [Event] = []
+    
+    func sortEvents() {
+        for event in events {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "MM/dd/yyyy"
+            
+            let calendar: NSCalendar = NSCalendar.currentCalendar()
+            let dueDate = calendar.startOfDayForDate(event.startDate)
+            let today = calendar.startOfDayForDate(NSDate())
+            let flags = NSCalendarUnit.Day
+            let components = calendar.components(flags, fromDate: today, toDate: dueDate, options: [])
+            
+            if components.day >= 0 {
+                
+                if event.eventType == "event" {
+                    eventsArray.append(event)
+                }
+                else {
+                    upcomingArray.append(event)
+                }
+                    
+            }
+            else {
+                pastArray.append(event)
+            }
+
+        }
+        
+    }
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath) as! EventsTableViewCell
-       
+      
+        
+        
+        var event: Event
         let row = indexPath.row
-        let event = events[row]
+        switch indexPath.section {
+        case 0:
+            event = upcomingArray[row]
+            checkPriority(event, cell: cell)
+            
+        case 1:
+            event = eventsArray[row]
+            checkPriority(event, cell: cell)
+        case 2:
+            event = pastArray[row]
+            checkPriority(event, cell: cell)
+        default:
+            fatalError()
+        }
+        
+        
         
         formatter.dateFormat = "MM/dd/yyyy"
         let dueDate = formatter.stringFromDate((event.startDate))
-        
-        checkPriority(event, cell: cell)
         
         cell.eventLabel.text = event.title
         cell.dateLabel.text = dueDate
@@ -91,8 +172,17 @@ class TaskController: UIViewController, UITableViewDataSource {
         
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
+            if indexPath.section == 0 {
+                self.upcomingArray.removeAtIndex(indexPath.row)
+            }
+            if indexPath.section == 1 {
+                self.eventsArray.removeAtIndex(indexPath.row)
+            }
+            if indexPath.section == 2 {
+                self.pastArray.removeAtIndex(indexPath.row)
+            }
             let selectedEvent = self.events[indexPath.row]
-            print(selectedEvent.identifier)
+//            print(self.events[indexPath.section])
             let eventName = EventHelper.sharedInstance.eventStore.eventWithIdentifier(selectedEvent.identifier)
             if eventName == nil {
                 event.deleteFromRealm()
@@ -102,28 +192,11 @@ class TaskController: UIViewController, UITableViewDataSource {
                 selectedEvent.deleteSelectedEvent(eventName!)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             }
-            print(eventName)
-//            event.deleteFromRealm()
-//            selectedEvent.deleteSelectedEvent(eventName!)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             
             print("Convenience callback for delete button!")
             return true
         })]
-//
-//        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor())]
-        
-        
-//        cell.rightExpansion.expansionColor = UIColor.redColor()
-//        cell.rightExpansion.fillOnTrigger = true
-//        
-//        cell.rightSwipeSettings.transition = MGSwipeTransition.Drag
-        
 
-        
-        //configure left buttons
-        //cell.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor())]
-//        cell.leftSwipeSettings.transition = MGSwipeTransition.ClipCenter
 
         
         return cell
@@ -181,6 +254,7 @@ class TaskController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         events = Event.retrieveEvent()
         noEventView()
+        sortEvents()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -190,7 +264,7 @@ class TaskController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        sortEvents()
         noEventView()
         
         

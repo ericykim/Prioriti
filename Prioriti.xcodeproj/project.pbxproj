@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42407541D5502BF006A02B1 /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42407531D5502BF006A02B1 /* CustomHeaderCell.swift */; };
 		B44653AF1D5271450035FCEA /* EmptyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */; };
 		B44653B11D53E1550035FCEA /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44653B01D53E1550035FCEA /* CellView.swift */; };
 		B44653B31D53E1790035FCEA /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44653B21D53E1790035FCEA /* AnimationClass.swift */; };
@@ -32,6 +33,7 @@
 		19BE867DBF527C33D1B578E8 /* Pods-Prioriti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prioriti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prioriti/Pods-Prioriti.debug.xcconfig"; sourceTree = "<group>"; };
 		68D59722AE1158EC88C32152 /* Pods-Prioriti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prioriti.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prioriti/Pods-Prioriti.release.xcconfig"; sourceTree = "<group>"; };
 		90A07BF5EBC5161E4267F2E6 /* Pods_Prioriti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prioriti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42407531D5502BF006A02B1 /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomHeaderCell.swift; path = ../TableView/CustomHeaderCell.swift; sourceTree = "<group>"; };
 		B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Prioriti-Bridging-Header.h"; path = "Prioriti/Prioriti-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewController.swift; sourceTree = "<group>"; };
 		B44653B01D53E1550035FCEA /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		B44653C21D53E29F0035FCEA /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		B44653C41D53E2ED0035FCEA /* EventHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		B44653C61D53E2F50035FCEA /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		B44653C81D53E3100035FCEA /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		B44653C81D53E3100035FCEA /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewCell.swift; path = ../TableView/EventsTableViewCell.swift; sourceTree = "<group>"; };
 		B47601EE1D38000800BEBDAD /* Prioriti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prioriti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47601F11D38000800BEBDAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47601F61D38000800BEBDAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,10 +77,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B44653AD1D5270EC0035FCEA /* TableView */ = {
+		B42407551D550D7D006A02B1 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B44653C81D53E3100035FCEA /* EventsTableViewCell.swift */,
+				B42407531D5502BF006A02B1 /* CustomHeaderCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		B44653AD1D5270EC0035FCEA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
 				B44653C21D53E29F0035FCEA /* TaskController.swift */,
 				B44653AE1D5271450035FCEA /* EmptyTableViewController.swift */,
 			);
@@ -131,8 +141,9 @@
 				B4C3B4191D3FE06500F4D0E3 /* EventViewControllers */,
 				B465196D1D3818B90066E78B /* ViewControllers */,
 				B44653AD1D5270EC0035FCEA /* TableView */,
-				B47601F51D38000800BEBDAD /* Main.storyboard */,
+				B42407551D550D7D006A02B1 /* TableViewCell */,
 				B43CC08E1D4BCC41003908A4 /* Prioriti-Bridging-Header.h */,
+				B47601F51D38000800BEBDAD /* Main.storyboard */,
 				B47601F81D38000800BEBDAD /* Assets.xcassets */,
 				B47601FA1D38000800BEBDAD /* LaunchScreen.storyboard */,
 				B47601F11D38000800BEBDAD /* AppDelegate.swift */,
@@ -311,6 +322,7 @@
 				B44653BD1D53E2300035FCEA /* HomeworkViewController.swift in Sources */,
 				B44653B71D53E18B0035FCEA /* CodeCellView.swift in Sources */,
 				B44653C51D53E2ED0035FCEA /* EventHelper.swift in Sources */,
+				B42407541D5502BF006A02B1 /* CustomHeaderCell.swift in Sources */,
 				B44653B11D53E1550035FCEA /* CellView.swift in Sources */,
 				B47601F21D38000800BEBDAD /* AppDelegate.swift in Sources */,
 				B44653C31D53E29F0035FCEA /* TaskController.swift in Sources */,
@@ -438,6 +450,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Prioriti/Prioriti-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -454,6 +467,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Prioriti/Prioriti-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
