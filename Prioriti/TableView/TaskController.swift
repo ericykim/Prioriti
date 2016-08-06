@@ -157,7 +157,7 @@ class TaskController: UIViewController, UITableViewDataSource {
         
         
         
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "EEE, MMM d"
         let dueDate = formatter.stringFromDate((event.startDate))
         
         cell.eventLabel.text = event.title
@@ -264,6 +264,9 @@ class TaskController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        pastArray.removeAll()
+        upcomingArray.removeAll()
+        eventsArray.removeAll()
         sortEvents()
         noEventView()
         
